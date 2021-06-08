@@ -17,12 +17,13 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from gallery.views import gallery, addImage,detail_gallery,auth
+from gallery.views import gallery, addImage,detail_gallery,auth,register
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', gallery),
     path("add/", addImage),
     path("images/<int:id>",detail_gallery),
-    path("login/",auth)
+    path("login/",auth),
+    path("register/",register)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
