@@ -1,0 +1,18 @@
+{% extends "base.html" %} 
+{% block main%}
+<h2>Responsive Image Gallery</h2>
+<h4>Resize the browser window to see the effect.</h4>
+
+{% for image in images %}
+    <div class="responsive">
+        <div class="gallery">
+            <a href="/images/{{image.id}}">
+                <img src="{{image.image.url}}" alt="{{image.alt}}" width="600" height="400">
+            </a>
+            <div class="desc">{{image.title}}</div>
+        </div>
+    </div>
+{% endfor %}
+
+
+{% endblock main %}
